@@ -1,0 +1,82 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Alex Vinall - Portfolio</title>
+    <meta
+      name="description"
+      content="A portfolio of personal projects spanning family collaborations and personal finance applications."
+    />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="styles.css" />
+  </head>
+  <body>
+    <main class="site-shell">
+      <header class="site-header">
+        <h1>Alex Vinall's personal projects</h1>
+        <p>
+          A collection of personal projects spanning creative collaborations with
+          my children, and practical applications in personal finance and organisation.
+        </p>
+
+        <nav class="social-links" aria-label="Social links">
+          <a href="https://github.com/alexvinall" aria-label="GitHub" target="_blank" rel="noopener noreferrer">
+            <svg viewBox="0 0 24 24" aria-hidden="true">
+              <path
+                d="M12 .5C5.65.5.5 5.65.5 12a11.5 11.5 0 0 0 7.86 10.92c.58.11.79-.25.79-.56v-2.16c-3.2.7-3.87-1.54-3.87-1.54-.53-1.34-1.28-1.7-1.28-1.7-1.05-.72.08-.7.08-.7 1.16.08 1.77 1.19 1.77 1.19 1.03 1.76 2.7 1.25 3.36.95.1-.75.4-1.25.72-1.54-2.55-.29-5.24-1.27-5.24-5.66 0-1.25.44-2.27 1.18-3.08-.12-.29-.51-1.46.11-3.04 0 0 .97-.31 3.17 1.18a10.9 10.9 0 0 1 5.78 0c2.2-1.5 3.17-1.18 3.17-1.18.62 1.58.23 2.75.11 3.04.74.81 1.18 1.83 1.18 3.08 0 4.4-2.69 5.37-5.26 5.65.41.35.78 1.03.78 2.08v3.08c0 .31.21.67.8.56A11.5 11.5 0 0 0 23.5 12C23.5 5.65 18.35.5 12 .5Z"
+              />
+            </svg>
+          </a>
+          <a href="https://www.linkedin.com/in/alexvinall/" aria-label="LinkedIn" target="_blank" rel="noopener noreferrer">
+            <svg viewBox="0 0 24 24" aria-hidden="true">
+              <path
+                d="M4.98 3.5C4.98 4.88 3.88 6 2.5 6A2.5 2.5 0 0 1 0 3.5 2.5 2.5 0 0 1 2.5 1a2.5 2.5 0 0 1 2.48 2.5ZM.36 8h4.27v13.5H.36V8ZM8.1 8h4.1v1.84h.06c.57-1.08 1.97-2.22 4.06-2.22 4.34 0 5.14 2.85 5.14 6.55v7.33h-4.27V15c0-1.55-.03-3.54-2.16-3.54-2.16 0-2.49 1.69-2.49 3.43v6.61H8.1V8Z"
+              />
+            </svg>
+          </a>
+        </nav>
+      </header>
+
+      <section class="filters" aria-label="Project filters">
+        <button class="filter-button active" data-filter="all" aria-pressed="true">All</button>
+        <button class="filter-button" data-filter="family" aria-pressed="false">Family Projects</button>
+        <button class="filter-button" data-filter="finance" aria-pressed="false">Personal Finance</button>
+        <button class="filter-button" data-filter="personal" aria-pressed="false">Personal</button>
+      </section>
+
+      <section aria-label="Projects">
+        <div class="project-grid" id="projectGrid"></div>
+      </section>
+
+      <footer>
+        <p>Created by Alex Vinall in 2026.</p>
+      </footer>
+    </main>
+
+    <template id="projectTemplate">
+      <a class="project-card" target="_blank" rel="noopener noreferrer">
+        <div class="project-meta">
+          <span class="project-category"></span>
+          <span class="external-icon" aria-hidden="true">
+            <svg viewBox="0 0 24 24">
+              <path
+                d="M14.5 3a1 1 0 1 0 0 2h3.09L9.3 13.3a1 1 0 1 0 1.4 1.4L19 6.41V9.5a1 1 0 1 0 2 0v-6a.9.9 0 0 0-.02-.2.95.95 0 0 0-.53-.65 1 1 0 0 0-.38-.12A1.1 1.1 0 0 0 19.9 3h-5.4ZM5 5a2 2 0 0 0-2 2v12a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2v-5a1 1 0 1 0-2 0v5H5V7h5a1 1 0 1 0 0-2H5Z"
+              />
+            </svg>
+          </span>
+        </div>
+        <h2 class="project-title"></h2>
+        <p class="project-description"></p>
+        <ul class="tag-list"></ul>
+      </a>
+    </template>
+
+    <script src="script.js"></script>
+  </body>
+</html>

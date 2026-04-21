@@ -1,0 +1,260 @@
+:root {
+  --bg: #f7f7fa;
+  --text: #191919;
+  --muted: #676b7d;
+  --border: #d9dbe5;
+  --chip: #e8e8ef;
+  --family-bg: #fdf2f8;
+  --family-border: #f2d9e8;
+  --finance-bg: #eff6ff;
+  --finance-border: #d6e7ff;
+  --personal-bg: #f4f8ef;
+  --personal-border: #dce8ce;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  background: var(--bg);
+  color: var(--text);
+  font-family: Inter, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+  line-height: 1.5;
+}
+
+.site-shell {
+  width: min(100%, 1152px);
+  margin: 0 auto;
+  padding: 64px 24px;
+}
+
+.site-header {
+  margin-bottom: 28px;
+}
+
+h1 {
+  font-size: clamp(2.1rem, 4vw, 2.8rem);
+  line-height: 1.1;
+  margin: 0;
+}
+
+.site-header p {
+  margin: 16px 0 0;
+  max-width: 70ch;
+  color: var(--muted);
+  font-size: clamp(1rem, 1.4vw, 1.1rem);
+}
+
+.social-links {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  margin-top: 20px;
+}
+
+.social-links a {
+  color: var(--muted);
+  opacity: 0.75;
+  transition: opacity 180ms ease;
+}
+
+.social-links a:hover,
+.social-links a:focus-visible {
+  opacity: 1;
+}
+
+.social-links svg {
+  width: 21px;
+  height: 21px;
+  fill: currentColor;
+}
+
+.filters {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+  margin: 0 0 10px;
+}
+
+.filter-button {
+  border: 1px solid transparent;
+  background: #eaeaef;
+  color: #5c6072;
+  border-radius: 12px;
+  padding: 10px 16px;
+  font-size: 1.05rem;
+  font-weight: 500;
+  cursor: pointer;
+  transition: background-color 180ms ease, color 180ms ease, transform 180ms ease;
+}
+
+.filter-button:hover,
+.filter-button:focus-visible {
+  background: #dddfea;
+  color: #454a5d;
+}
+
+.filter-button.active {
+  background: #111318;
+  color: #f8f8fb;
+}
+
+.filter-button:active {
+  transform: translateY(1px);
+}
+
+.project-grid {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 6px;
+}
+
+.project-card {
+  text-decoration: none;
+  border: 1px solid var(--border);
+  border-radius: 10px;
+  padding: 24px;
+  display: flex;
+  flex-direction: column;
+  min-height: 210px;
+  transition: border-color 200ms ease, box-shadow 200ms ease, transform 220ms ease,
+    opacity 220ms ease;
+}
+
+.project-card.family {
+  background: var(--family-bg);
+  border-color: var(--family-border);
+}
+
+.project-card.finance {
+  background: var(--finance-bg);
+  border-color: var(--finance-border);
+}
+
+.project-card.personal {
+  background: var(--personal-bg);
+  border-color: var(--personal-border);
+}
+
+.project-card:hover,
+.project-card:focus-visible {
+  transform: translateY(-1px);
+  box-shadow: 0 10px 28px rgb(23 29 44 / 8%);
+}
+
+.project-card.family:hover,
+.project-card.family:focus-visible {
+  border-color: #e3bcd2;
+}
+
+.project-card.finance:hover,
+.project-card.finance:focus-visible {
+  border-color: #bbd7ff;
+}
+
+.project-card.personal:hover,
+.project-card.personal:focus-visible {
+  border-color: #bfd3a1;
+}
+
+.project-meta {
+  display: flex;
+  justify-content: space-between;
+  gap: 10px;
+}
+
+.project-category {
+  font-size: 0.86rem;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  color: #73788b;
+}
+
+.external-icon {
+  color: #73788b;
+  transition: transform 220ms ease;
+}
+
+.project-card:hover .external-icon,
+.project-card:focus-visible .external-icon {
+  transform: translate(1px, -1px);
+}
+
+.external-icon svg {
+  width: 20px;
+  height: 20px;
+  fill: currentColor;
+}
+
+.project-title {
+  margin: 10px 0 6px;
+  font-size: clamp(1.45rem, 2.4vw, 1.9rem);
+  line-height: 1.2;
+  color: var(--text);
+}
+
+.project-description {
+  margin: 0 0 16px;
+  color: var(--muted);
+  font-size: 1.02rem;
+}
+
+.tag-list {
+  margin: auto 0 0;
+  padding: 0;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+  list-style: none;
+}
+
+.tag-list li {
+  font-size: 0.9rem;
+  background: var(--chip);
+  color: #676d80;
+  padding: 4px 8px;
+  border-radius: 6px;
+}
+
+.project-grid.hidden {
+  opacity: 0;
+  transform: translateY(6px);
+  pointer-events: none;
+}
+
+footer {
+  margin-top: 20px;
+  padding-top: 20px;
+  border-top: 1px solid var(--border);
+}
+
+footer p {
+  margin: 0;
+  color: #73788b;
+  font-size: 0.95rem;
+}
+
+@media (min-width: 768px) {
+  .site-shell {
+    padding-block: 96px;
+  }
+
+  .site-header {
+    margin-bottom: 64px;
+  }
+
+  .project-grid {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  *,
+  *::before,
+  *::after {
+    transition-duration: 0.001ms !important;
+    animation-duration: 0.001ms !important;
+  }
+}
