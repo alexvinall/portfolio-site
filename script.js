@@ -30,7 +30,7 @@ const projects = [
     description:
       "A personal and private pregnancy calendar. Input your current stage of pregnancy (weeks and days) to generate a downloadable pregnancy calendar showing the start of each week. You can import this into Google, iOS and other calendars.",
     tags: ["Family", "Pregnancy", "Calendar"],
-    url: "#"
+    url: "https://alexvinall.github.io/pregnancy-calendar/"
   }
 ];
 
